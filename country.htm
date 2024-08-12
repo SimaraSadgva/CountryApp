@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="country.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="country.css" />
+    <title>CountryApp</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbasliq">
+        <div class="basliqbar">
+          <i class="fa-solid fa-earth-americas"></i>
+          <i onclick="show()" class="fa-solid fa-chart-bar"></i>
+        </div>
+        <nav>
+          <div class="container">
+            <ul class="desktopmenu">
+              <li><a href="#">Europe</a></li>
+              <li><a href="#">Asia</a></li>
+              <li><a href="#">Americas</a></li>
+              <i class="fa-solid fa-earth-americas"></i>
+              <li><a href="#">Africa</a></li>
+              <li><a href="#">Oceania</a></li>
+              <li><a href="#">Antractic</a></li>
+            </ul>
+          </div>
+
+          <div class="menu">
+            <ul>
+              <li><a href="#">Europe</a></li>
+              <li><a href="#">Asia</a></li>
+              <li><a href="#">Americas</a></li>
+              <li><a href="#">Africa</a></li>
+              <li><a href="#">Oceania</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="basliq">
+        <h1>Welcome to CountryApp Website</h1>
+        <h2>You can find data of any country in this website.</h2>
+        <div class="btns">
+          <button class="btn1">have a look</button>
+          <button class="btn2">search</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="country">
+        <div class="imgflag">
+          <img src="" alt="country flag" />
+        </div>
+        <div class="countryinfo">
+          <h3>
+            <a href="#">Guatemala</a>
+          </h3>
+          <h4>
+            <a href="#">Americas</a>
+          </h4>
+          <p>Capital: <span class="capital">Guatemala City</span></p>
+          <p>
+            Area:
+            <span class="area"> 108889 km<sup>2</sup> </span>
+          </p>
+          <p>Population: <span class="popul">16858333</span></p>
+        </div>
+      </div>
+
+      <div class="countries"></div>
+      <div class="btnshow">
+        <button onclick="show3()" class="btn3">Show More</button>
+      </div>
+    </main>
+    <footer>
+      <div class="last">
+        <p>🌏 by Simara</p>
+      </div>
+    </footer>
+
+    <script src="country.js"></script>
+  </body>
+</html>
