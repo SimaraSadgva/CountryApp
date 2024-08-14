@@ -20,7 +20,7 @@ header {
 .fa-earth-americas,
 .fa-chart-bar {
   color: purple;
-  font-size: 1.8em;
+  font-size: 2em;
   padding-bottom: 6px;
 }
 .fa-earth-americas {
@@ -75,20 +75,19 @@ nav {
 
 .basliq {
   text-align: center;
-  padding: 50px 0;
+  padding: 60px 0;
 }
 .basliq h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
-  text-shadow: 1px 1px 5px purple;
+  text-shadow: 10px 10px 17px rgb(124, 59, 124);
   padding: 5px 0;
   margin-top: 60px;
 }
 .basliq h2 {
   padding: 20px 0;
-  color: purple;
+  color: rgb(94, 26, 94);
   font-weight: 900;
-  text-shadow: 1px 1px 5px rgb(199, 166, 199);
 }
 
 .btn1,
@@ -138,6 +137,10 @@ nav {
 }
 .countryinfo h3 {
   font-size: 30px;
+  &:hover {
+    text-decoration: underline;
+    color: rgb(143, 26, 143);
+  }
   a {
     text-decoration: none;
   }
@@ -179,6 +182,11 @@ nav {
     margin: 30px 0 0 0;
     padding-left: 10px;
   }
+  .info h5 {
+    padding-bottom: 10px;
+    color: purple;
+    font-size: 1em;
+  }
 
   .countriesinfo {
     display: flex;
@@ -214,8 +222,48 @@ footer p {
   padding-top: 10px;
   text-shadow: 1px 1px 5px rgb(148, 144, 144);
 }
+.dark {
+  background-color: #2b2727;
+  color: #e6e6e6;
+}
+body.dark nav {
+  background-color: black;
+}
+body.dark .navbasliq {
+  background-color: black;
+}
+body.dark .navbasliq a {
+  color: white;
+  border-bottom: initial;
+}
+body.dark .basliq h1 {
+  color: rgb(173, 13, 139);
+  text-shadow: 10px 10px 17px rgb(70, 18, 70);
+}
+body.dark .basliq h2 {
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 5px purple;
+}
+body.dark .mobmenu {
+  background-color: black;
+}
+body.dark footer {
+  background-color: black;
+}
+body.dark footer p {
+  color: white;
+}
+
+.fa-wand-magic-sparkles {
+  font-size: 1.4em;
+  padding-top: 8px;
+}
 
 @media only screen and (min-width: 768px) {
+  .basliq {
+    padding-top: 150px;
+    padding-bottom: 70px;
+  }
   .basliq h1 {
     font-size: 3.2em;
   }
@@ -232,21 +280,22 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
   .container {
-    max-width: 1800px;
+    max-width: 1900px;
     margin: auto;
   }
   .container ul {
     list-style: none;
     font-size: 20px;
     li {
-      padding: 30px 25px;
+      padding: 30px 30px;
 
       a {
         text-decoration: none;
         color: rgb(100, 96, 96);
-        border-bottom: 1px solid rgb(187, 184, 187);
+        border-bottom: 1px solid rgb(238, 236, 238);
         padding-bottom: 5px;
         transition: all 1s;
         &:hover {
@@ -271,7 +320,7 @@ footer p {
   .countryinfo {
     width: 36%;
     height: 50vh;
-    border: 1px solid #b9b5b5;
+    /* border: 1px solid #b9b5b5; */
     padding: 50px;
     box-shadow: 1px 1px 5px rgb(161, 35, 119);
   }
@@ -293,5 +342,12 @@ footer p {
       display: block;
       box-shadow: 1px 1px 5px rgb(179, 137, 179);
     }
+  }
+  .fa-wand-magic-sparkles {
+    position: absolute;
+    font-size: 1.1em;
+    padding-top: 5px;
+    right: 0;
+    margin-right: 50px;
   }
 }
