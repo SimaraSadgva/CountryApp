@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="style.css" />
     <title>CountryApp</title>
   </head>
+
   <body>
     <header>
       <div class="navbasliq">
         <div class="basliqbar">
-          <i class="fa-solid fa-earth-americas"></i>
+          <i onclick="first()" class="fa-solid fa-earth-americas"></i>
           <div class="light">
             <i onclick="change()" class="fa-solid fa-wand-magic-sparkles"></i>
           </div>
@@ -27,24 +28,27 @@
         <nav>
           <div class="container">
             <ul class="desktopmenu">
-              <li><a href="#">Europe</a></li>
-              <li><a href="#">Asia</a></li>
-              <li><a href="#">Americas</a></li>
-              <i class="fa-solid fa-earth-americas"></i>
-              <li><a href="#">Africa</a></li>
-              <li><a href="#">Oceania</a></li>
-              <li><a href="#">Antractic</a></li>
+              <li><a onclick="europe()" href="#">Europe</a></li>
+              <li><a onclick="asia()" href="#">Asia</a></li>
+              <li><a onclick="americas()" href="#">Americas</a></li>
+              <i onclick="first()" class="fa-solid fa-earth-americas"></i>
+              <li><a onclick="africa()" href="#">Africa</a></li>
+              <li><a onclick="oceania()" href="#">Oceania</a></li>
+              <li>
+                <a onclick="antarctic()" href="#">Antarctic</a>
+              </li>
               <i onclick="change()" class="fa-solid fa-wand-magic-sparkles"></i>
             </ul>
           </div>
 
           <div class="menu">
             <ul>
-              <li><a href="#">Europe</a></li>
-              <li><a href="#">Asia</a></li>
-              <li><a href="#">Americas</a></li>
-              <li><a href="#">Africa</a></li>
-              <li><a href="#">Oceania</a></li>
+              <li><a onclick="europe()" href="#">Europe</a></li>
+              <li><a onclick="asia()" href="#">Asia</a></li>
+              <li><a onclick="americas()" href="#">Americas</a></li>
+              <li><a onclick="africa()" href="#">Africa</a></li>
+              <li><a onclick="oceania()" href="#">Oceania</a></li>
+              <li><a onclick="antarctic()" href="#">Antarctic</a></li>
             </ul>
           </div>
         </nav>
@@ -80,6 +84,7 @@
       </div>
 
       <div class="countries"></div>
+
       <div class="btnshow">
         <button onclick="show3()" class="btn3">Show More...</button>
       </div>

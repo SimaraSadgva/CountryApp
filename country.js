@@ -2310,6 +2310,157 @@ function change() {
   obj.classList.toggle("dark");
 }
 
+function europe() {
+  countries.innerHTML = "";
+  data.map((item, i) => {
+    if (item.region == "Europe") {
+      countries.innerHTML += `
+      <div class="country">
+                  <div class="flags">
+                      <img src="${item.flag}" alt="country flag">
+                  </div>
+                  <div class="info">
+                      <h5>${item.region}</h5>
+                      <h4>${item.name}</h4>
+                      <div class="countriesinfo">
+                          <div>Population: <span>${item.population}</span></div>
+                          <div>${item.area} km<sup>2</sup></div></span>
+                      </div>
+                  </div>
+              </div>
+      `;
+      country.innerHTML = "";
+    }
+  });
+}
+
+// europe()
+
+function asia() {
+  countries.innerHTML = "";
+  data.map((item, i) => {
+    if (item.region == "Asia") {
+      countries.innerHTML += `
+      <div class="country">
+                  <div class="flags">
+                      <img src="${item.flag}" alt="country flag">
+                  </div>
+                  <div class="info">
+                      <h5>${item.region}</h5>
+                      <h4>${item.name}</h4>
+                      <div class="countriesinfo">
+                          <div>Population: <span>${item.population}</span></div>
+                          <div>${item.area} km<sup>2</sup></div></span>
+                      </div>
+                  </div>
+              </div>
+      `;
+      country.innerHTML = "";
+    }
+  });
+}
+
+function americas() {
+  countries.innerHTML = "";
+  data.map((item, i) => {
+    if (item.region == "Americas") {
+      countries.innerHTML += `
+      <div class="country">
+                  <div class="flags">
+                      <img src="${item.flag}" alt="country flag">
+                  </div>
+                  <div class="info">
+                      <h5>${item.region}</h5>
+                      <h4>${item.name}</h4>
+                      <div class="countriesinfo">
+                          <div>Population: <span>${item.population}</span></div>
+                          <div>${item.area} km<sup>2</sup></div></span>
+                      </div>
+                  </div>
+              </div>
+      `;
+      country.innerHTML = "";
+    }
+  });
+}
+
+function africa() {
+  countries.innerHTML = "";
+  data.map((item, i) => {
+    if (item.region == "Africa") {
+      countries.innerHTML += `
+      <div class="country">
+                  <div class="flags">
+                      <img src="${item.flag}" alt="country flag">
+                  </div>
+                  <div class="info">
+                      <h5>${item.region}</h5>
+                      <h4>${item.name}</h4>
+                      <div class="countriesinfo">
+                          <div>Population: <span>${item.population}</span></div>
+                          <div>${item.area} km<sup>2</sup></div></span>
+                      </div>
+                  </div>
+              </div>
+      `;
+      country.innerHTML = "";
+    }
+  });
+}
+
+function oceania() {
+  countries.innerHTML = "";
+  data.map((item, i) => {
+    if (item.region == "Oceania") {
+      countries.innerHTML += `
+      <div class="country">
+                  <div class="flags">
+                      <img src="${item.flag}" alt="country flag">
+                  </div>
+                  <div class="info">
+                      <h5>${item.region}</h5>
+                      <h4>${item.name}</h4>
+                      <div class="countriesinfo">
+                          <div>Population: <span>${item.population}</span></div>
+                          <div>${item.area} km<sup>2</sup></div></span>
+                      </div>
+                  </div>
+              </div>
+      `;
+      country.innerHTML = "";
+    }
+  });
+}
+
+function antarctic() {
+  countries.innerHTML = "";
+  data.map((item, i) => {
+    if (item.region == "Antarctic") {
+      countries.innerHTML += `
+      <div class="country">
+                  <div class="flags">
+                      <img src="${item.flag}" alt="country flag">
+                  </div>
+                  <div class="info">
+                      <h5>${item.region}</h5>
+                      <h4>${item.name}</h4>
+                      <div class="countriesinfo">
+                          <div>Population: <span>${item.population}</span></div>
+                          <div>${item.area} km<sup>2</sup></div></span>
+                      </div>
+                  </div>
+              </div>
+      `;
+      country.innerHTML = "";
+    }
+  });
+}
+
+function first() {
+  show2(23);
+  yenile();
+}
+
 function rnd(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
