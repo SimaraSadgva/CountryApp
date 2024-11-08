@@ -1,3 +1,5 @@
+AOS.init();
+
 let data = [
   {
     area: 3903,
@@ -2254,6 +2256,13 @@ let data = [
 const menu = document.querySelector(".menu");
 const country = document.querySelector(".country");
 const countries = document.querySelector(".countries");
+const closeInp = document.querySelector("#closeInp");
+const section1 = document.querySelector("#section1");
+const section2 = document.querySelector("#section2");
+const main1 = document.getElementById("main1");
+const main2 = document.getElementById("main2");
+const basliq = document.querySelector(".basliq");
+
 
 function show() {
   menu.classList.toggle("mobmenu");
@@ -2274,48 +2283,34 @@ function yenile() {
 }
 yenile();
 
-function show2(say) {
-  let kod = "";
-  for (let i = 0; i <= say; i++) {
-    let info = data[i];
-    kod += `
-  <div class="country">
-                  <div class="flags">
-                      <img src="${info.flag}" alt="country flag">
-                  </div>
-                  <div class="info">
-                      <h5>${info.region}</h5>
-                      <h4>${info.name}</h4>
-                      <div class="countriesinfo">
-                          <div>Population: <span>${info.population}</span></div>
-                          <div>${info.area} km<sup>2</sup></div></span>
-                      </div>
-                  </div>
-              </div>
-  `;
-  }
-  countries.innerHTML = kod;
-}
-show2(23);
 
-let yenileme = 1;
-function show3() {
-  let say = 23;
-  yenileme++;
-  show2(yenileme * say);
-}
+//dakmood a kecme
 
 function change() {
   let obj = document.body;
   obj.classList.toggle("dark");
 }
 
-function europe() {
+//regiona gore cixmasi
+
+let deyisen = 23;
+
+function getFullCards(regionArg) {
+  let arr = [];
+
+  if (regionArg == "") arr = data.slice(0, deyisen);
+  else arr = data;
+
   countries.innerHTML = "";
-  data.map((item, i) => {
-    if (item.region == "Europe") {
+
+  if (regionArg != "") country.innerHTML = "";
+  else yenile();
+
+  arr.map((item) => {
+    if (item.region.includes(regionArg)) {
       countries.innerHTML += `
-      <div class="country">
+      <article data-aos="zoom-in-up" >
+    <div class="country" onclick="showCountry('${item.id}')">
                   <div class="flags">
                       <img src="${item.flag}" alt="country flag">
                   </div>
@@ -2328,138 +2323,103 @@ function europe() {
                       </div>
                   </div>
               </div>
-      `;
-      country.innerHTML = "";
+  `;
     }
   });
 }
 
-// europe()
+getFullCards("");
 
-function asia() {
-  countries.innerHTML = "";
-  data.map((item, i) => {
-    if (item.region == "Asia") {
-      countries.innerHTML += `
-      <div class="country">
-                  <div class="flags">
-                      <img src="${item.flag}" alt="country flag">
-                  </div>
-                  <div class="info">
-                      <h5>${item.region}</h5>
-                      <h4>${item.name}</h4>
-                      <div class="countriesinfo">
-                          <div>Population: <span>${item.population}</span></div>
-                          <div>${item.area} km<sup>2</sup></div></span>
-                      </div>
-                  </div>
-              </div>
-      `;
-      country.innerHTML = "";
-    }
-  });
-}
+//showmore duymesni basdqda
 
-function americas() {
-  countries.innerHTML = "";
-  data.map((item, i) => {
-    if (item.region == "Americas") {
-      countries.innerHTML += `
-      <div class="country">
-                  <div class="flags">
-                      <img src="${item.flag}" alt="country flag">
-                  </div>
-                  <div class="info">
-                      <h5>${item.region}</h5>
-                      <h4>${item.name}</h4>
-                      <div class="countriesinfo">
-                          <div>Population: <span>${item.population}</span></div>
-                          <div>${item.area} km<sup>2</sup></div></span>
-                      </div>
-                  </div>
-              </div>
-      `;
-      country.innerHTML = "";
-    }
-  });
-}
-
-function africa() {
-  countries.innerHTML = "";
-  data.map((item, i) => {
-    if (item.region == "Africa") {
-      countries.innerHTML += `
-      <div class="country">
-                  <div class="flags">
-                      <img src="${item.flag}" alt="country flag">
-                  </div>
-                  <div class="info">
-                      <h5>${item.region}</h5>
-                      <h4>${item.name}</h4>
-                      <div class="countriesinfo">
-                          <div>Population: <span>${item.population}</span></div>
-                          <div>${item.area} km<sup>2</sup></div></span>
-                      </div>
-                  </div>
-              </div>
-      `;
-      country.innerHTML = "";
-    }
-  });
-}
-
-function oceania() {
-  countries.innerHTML = "";
-  data.map((item, i) => {
-    if (item.region == "Oceania") {
-      countries.innerHTML += `
-      <div class="country">
-                  <div class="flags">
-                      <img src="${item.flag}" alt="country flag">
-                  </div>
-                  <div class="info">
-                      <h5>${item.region}</h5>
-                      <h4>${item.name}</h4>
-                      <div class="countriesinfo">
-                          <div>Population: <span>${item.population}</span></div>
-                          <div>${item.area} km<sup>2</sup></div></span>
-                      </div>
-                  </div>
-              </div>
-      `;
-      country.innerHTML = "";
-    }
-  });
-}
-
-function antarctic() {
-  countries.innerHTML = "";
-  data.map((item, i) => {
-    if (item.region == "Antarctic") {
-      countries.innerHTML += `
-      <div class="country">
-                  <div class="flags">
-                      <img src="${item.flag}" alt="country flag">
-                  </div>
-                  <div class="info">
-                      <h5>${item.region}</h5>
-                      <h4>${item.name}</h4>
-                      <div class="countriesinfo">
-                          <div>Population: <span>${item.population}</span></div>
-                          <div>${item.area} km<sup>2</sup></div></span>
-                      </div>
-                  </div>
-              </div>
-      `;
-      country.innerHTML = "";
-    }
-  });
+function show3() {
+  deyisen += 23;
+  getFullCards("");
 }
 
 function first() {
-  show2(23);
+  getFullCards("");
   yenile();
 }
+
+let flag = false;
+function showInp() {
+  closeInp.style.maxHeight = flag ? "0" : "100px";
+  flag = !flag;
+}
+
+function scrollByRandomCard() {
+  window.scrollTo({
+    top: 450,
+    behavior: "smooth",
+  });
+}
+
+function searchFunk() {
+  const inpVal = document.getElementById("search").value;
+  if (inpVal.trim() === "") {
+    section1.style.display = "block";
+    section2.style.display = "block";
+    getFullCards("");
+  } else {
+    section1.style.display = "none";
+    section2.style.display = "none";
+    countries.innerHTML = "";
+    data.map((item) => {
+      if (
+        item.name.toLocaleLowerCase().startsWith(inpVal.toLocaleLowerCase())
+      ) {
+        countries.innerHTML += `
+      <article data-aos="zoom-in-up" >
+    <div class="country">
+                  <div class="flags">
+                      <img src="${item.flag}" alt="country flag">
+                  </div>
+                  <div class="info">
+                      <h5>${item.region}</h5>
+                      <h4>${item.name}</h4>
+                      <div class="countriesinfo">
+                          <div>Population: <span>${item.population}</span></div>
+                          <div>${item.area} km<sup>2</sup></div></span>
+                      </div>
+                  </div>
+              </div>
+  `;
+      }
+    });
+  }
+}
+
+// function getOneCards() {
+//   section1.style.display = "none";
+//   section2.style.display = "none";
+// }
+
+function showCountry(id) {  
+  main1.style.display = "none";
+  basliq.style.display = "none";
+  main2.style.display = "flex";
+  let card;
+  data.forEach((item) => {
+    if (item.id == id) card = item;
+  });
+
+  main2.innerHTML = `
+        <div class="cardtop">
+            <h1 class="cardh1 ">${card.name}</h1>
+            <p >Paytaxtı: ${card.name}</p>
+            <p>Danışılan dillər: ${card.capital}</p>
+            <p><b>Regionu:</b>${card.region}</p>
+            <p><b>Ümumi Sahesi:</b> ${card.area}</p>
+            <p><b>Əhalisi:</b> ${card.population}</p>
+        </div>
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded" src="${card.flag}" alt="flag">
+        </div>
+    `;
+}
+
+
 
 function rnd(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
